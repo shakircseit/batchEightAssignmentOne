@@ -26,5 +26,14 @@ function formatCoordinate(coordinate: [number, number, string]): string {
   const [lat, long, location] = coordinate;
   return `"Location:${location} ${lat} ${long}"`;
 }
-const x = formatCoordinate([22.35, 91.78, "Chittagong"]);
-console.log(x);
+//const x = formatCoordinate([22.35, 91.78, "Chittagong"]);
+//console.log(x);
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  return arrays.reduce((res, currentArray) => {
+    return res.concat(currentArray);
+  }, [] as T[]);
+}
+
+console.log(concatenateArrays(["a", "b"], ["c", "d"]));
+console.log(concatenateArrays([1, 2], [3, 4], [5]));
