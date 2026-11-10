@@ -35,5 +35,17 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   }, [] as T[]);
 }
 
-console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
+//console.log(concatenateArrays(["a", "b"], ["c", "d"], ["m", "n"]));
+//console.log(concatenateArrays([1, 2], [3, 4], [5]));
+
+interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
+}
+
+function getPopularCourses(courses: Course[], minStudents: number): Course[] {
+  return courses.filter(
+    (course) => course.isPublished === true && course.students >= minStudents,
+  );
+}
