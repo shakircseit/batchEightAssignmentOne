@@ -10,7 +10,7 @@ This submission contains two blog posts and the TypeScript solutions file.
 ## Files
 
 ```text
-typescript_blog_task/
+b8a1/
 ├── solutions.ts
 ├── type-vs-interface.md
 ├── generics-and-promises.md
