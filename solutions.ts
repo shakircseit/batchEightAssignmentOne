@@ -7,9 +7,6 @@ function multiplyValue(value: number, multiplier?: number): number {
   }
 }
 
-//const x = multiplyValue(7, 0);
-//console.log(x);
-
 function processInput(value: number | string | boolean): string | number {
   if (typeof value === "string") {
     return value.trim().toLowerCase();
@@ -21,23 +18,17 @@ function processInput(value: number | string | boolean): string | number {
     throw new Error("Invalid input");
   }
 }
-//console.log(processInput(false));
 
 function formatCoordinate(coordinate: [number, number, string]): string {
   const [lat, long, location] = coordinate;
   return `"Location:${location} ${lat} ${long}"`;
 }
-//const x = formatCoordinate([22.35, 91.78, "Chittagong"]);
-//console.log(x);
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.reduce((res, currentArray) => {
     return res.concat(currentArray);
   }, [] as T[]);
 }
-
-//console.log(concatenateArrays(["a", "b"], ["c", "d"], ["m", "n"]));
-//console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 interface Course {
   title: string;
@@ -75,9 +66,7 @@ class Manager extends Employee {
     return `"Manager of ${this.department}: ${this.name}"`;
   }
 }
-//const manager = new Manager("Alice", 50000, "Engineering");
-//console.log(manager.getDetails());
-//console.log(manager.getRoleInfo());
+
 const validateAgeAsync = (age: number): Promise<string> => {
   const res = new Promise<string>((res, rej) => {
     if (age >= 18) {
@@ -90,4 +79,3 @@ const validateAgeAsync = (age: number): Promise<string> => {
   });
   return res;
 };
-console.log(await validateAgeAsync(20));
