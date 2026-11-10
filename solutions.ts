@@ -1,3 +1,4 @@
+export {};
 function multiplyValue(value: number, multiplier?: number): number {
   if (multiplier === undefined) {
     return value * 2;
@@ -53,3 +54,40 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
+
+class Employee {
+  protected name: string;
+  private baseSalary: number;
+  constructor(name: string, baseSalary: number) {
+    ((this.name = name), (this.baseSalary = baseSalary));
+  }
+  getDetails(): string {
+    return `"Employee: ${this.name} Base Salary: ${this.baseSalary}"`;
+  }
+}
+class Manager extends Employee {
+  private department: string;
+  constructor(name: string, baseSalary: number, department: string) {
+    super(name, baseSalary);
+    this.department = department;
+  }
+  getRoleInfo(): string {
+    return `"Manager of ${this.department}: ${this.name}"`;
+  }
+}
+//const manager = new Manager("Alice", 50000, "Engineering");
+//console.log(manager.getDetails());
+//console.log(manager.getRoleInfo());
+const validateAgeAsync = (age: number): Promise<string> => {
+  const res = new Promise<string>((res, rej) => {
+    if (age >= 18) {
+      setTimeout(() => {
+        res("Access Granted");
+      }, 1000);
+    } else {
+      rej(new Error("Access Denied: Must be 18 or older"));
+    }
+  });
+  return res;
+};
+console.log(await validateAgeAsync(20));
