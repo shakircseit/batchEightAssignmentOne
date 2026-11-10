@@ -1,4 +1,4 @@
-# TypeScript Assignment and Blog Post
+# Problem Solving with TypeScript & OOP and Blog Post
 
 This submission contains two blog posts and the TypeScript solutions file.
 
