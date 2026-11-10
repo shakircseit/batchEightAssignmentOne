@@ -19,7 +19,9 @@ function processInput(value: number | string | boolean): string | number {
   }
 }
 
-function formatCoordinate(coordinate: [number, number, string]): string {
+function formatCoordinate(
+  coordinate: readonly [number, number, string],
+): string {
   const [lat, long, location] = coordinate;
   return `"Location:${location} ${lat} ${long}"`;
 }
